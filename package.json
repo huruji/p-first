@@ -15,6 +15,10 @@
     "release:minor": "npm run build && standard-version --release-as minor && git push --follow-tags origin master && npm publish",
     "release:patch": "npm run build && standard-version --release-as patch && git push --follow-tags origin master && npm publish"
   },
+  "files": [
+    "index.ts",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/huruji/p-first.git"

@@ -1,10 +1,8 @@
-中文 | [English](./README_EN.md)
+English | [中文](./README.md)
 
 # p-first
 
-让你的 Promise 支持获取第一个变为 fulfilled 状态的函数
-
-> 不同于 `Promise.race` 不管是 fulfilled 或者是 rejected 状态都会返回
+make your Promise support getting first fulfilled Promise 
 
 ## How to use
 
@@ -18,7 +16,7 @@ import first from 'p-first'
 first(yourPromises)
 ```
 
-或者你可以拓展你的 `Promise` 构造函数
+or you can extend you `Promise` constructor
 
 ```js
 Promise.first = first
@@ -26,7 +24,7 @@ Promise.first = first
 
 ## real world use
 
-你有两个 Ajax api 获取相同的数据，但是你不知道哪个 Ajax api 会先返回，也无法预测哪个 Ajax api 会出问题, 你可以使用 `p-first` 来获取**第一个成功返回**的数据
+You have two Ajax api to get same data, but you don't know which Ajax api will return first or which Ajax api will not work, you can use `p-first` to get the first
 
 ```js
 const p1 = new Promise(resolve => {
@@ -54,7 +52,7 @@ Promise.first([p1, p3, p2]).then(data => {
 
 ## catch error
 
-当没有一个 Promise 变为了 fulfilled 状态，你可以在 `.catch` 中捕获 error
+when none of the promises resolves, you can use `.catch` to catch error
 
 ```js
 const p1 = new Promise((resolve, reject) => {
